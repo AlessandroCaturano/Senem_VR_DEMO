@@ -1,5 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9140006725429068406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3aced3429e5911458f4da2dac9d0f29, type: 3}
+  m_Name: MetaHandTrackingAim Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Hand Tracking Aim
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metahandtrackingaim
+  openxrExtensionStrings: XR_FB_hand_tracking_aim
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &-8670576058515771690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,9 +192,11 @@ MonoBehaviour:
   - {fileID: 2573577939124944349}
   - {fileID: 3402151966946236539}
   - {fileID: -7946937224115677727}
+  - {fileID: 640555645026774776}
   - {fileID: -4423693656324340918}
   - {fileID: -8670576058515771690}
   - {fileID: -1647079453864141108}
+  - {fileID: -9140006725429068406}
   - {fileID: 6434109599174051626}
   - {fileID: -5763059607406284265}
   - {fileID: 5172492867841329841}
@@ -262,6 +284,26 @@ MonoBehaviour:
   Keys: 01000000
   Values:
   - {fileID: -4193216000630271515}
+--- !u!114 &640555645026774776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e314dfef9af0904e80129bcc0a79361, type: 3}
+  m_Name: HandTracking Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Hand Tracking Subsystem
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.handtracking
+  openxrExtensionStrings: XR_EXT_hand_tracking
+  company: Unity
+  priority: -100
+  required: 0
 --- !u!114 &2573577939124944349
 MonoBehaviour:
   m_ObjectHideFlags: 0
