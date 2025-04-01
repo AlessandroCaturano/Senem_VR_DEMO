@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Tilia.Locomotors.AxisMove;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class StandUpPositionHandler : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class StandUpPositionHandler : MonoBehaviour
     [SerializeField] Transform cameraRig;
     [SerializeField] UnityEvent standUpTeleportEvent;
     [SerializeField] AxisMoveFacade movementHandler;
+    [SerializeField] GameObject tablet;
+    [SerializeField] TMP_Text tabletText;
+    Keyboard keyboard;
+    bool tabletOn = false;
+
     float horizontalMovementMultiplier;
     float verticalMovementMultiplier;
     public void SetPosition()
@@ -32,5 +38,30 @@ public class StandUpPositionHandler : MonoBehaviour
         standUpTeleportEvent.Invoke();
         movementHandler.HorizontalAxisMultiplier = horizontalMovementMultiplier;
         movementHandler.VerticalAxisMultiplier = verticalMovementMultiplier;
+    }
+
+    public void TabletInput() {
+        if (!sitting)
+            return;
+        if (!keyboard)
+            keyboard = FindObjectOfType<Keyboard>();
+        if (!tabletOn)
+            OpenTablet();
+        else
+            CloseTablet();
+    }
+
+    void OpenTablet()
+    {            
+        keyboard.gameObject.SetActive(true);
+        keyboard.Edit(tabletText);
+        tablet.SetActive(true);
+        tabletOn = true;
+    }
+
+    void CloseTablet() {
+        keyboard.gameObject.SetActive(false);
+        tablet.SetActive(false);
+        tabletOn = false;
     }
 }
