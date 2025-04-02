@@ -35,6 +35,7 @@ public class StandUpPositionHandler : MonoBehaviour
         if (!sitting)
             return;
         sitting = false;
+        CloseTablet();
         standUpTeleportEvent.Invoke();
         movementHandler.HorizontalAxisMultiplier = horizontalMovementMultiplier;
         movementHandler.VerticalAxisMultiplier = verticalMovementMultiplier;
